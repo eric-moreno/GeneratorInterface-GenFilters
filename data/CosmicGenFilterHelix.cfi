@@ -11,5 +11,8 @@ module cosmicInTracker = CosmicGenFilterHelix {
     double minP  = 0.
     double minPt = 0.
     
-    untracked string monitorFile = "" # root file, if empty no monitoring
+    untracked bool doMonitor = false # Fill monitoring histograms? Needs TFileService, cf. below.
 }
+#service = TFileService { 
+#    string fileName = "histo.root"
+#}
