@@ -1,11 +1,11 @@
-        module bh_filter = BHFilter
+        module BeamHaloGenFilter = BHFilter
          {
-           bool filter = true
+#           bool filter = true
 
         ### Fast magnetic-field propagator **** not yet used ****
         ### Beam Halo muons are straight propagated 
 
-           untracked bool InTK=true
+#           untracked bool InTK=true
         # The radii of the cylinders for propagation
            vdouble radii = { 700., 638., 597., 536., 491., 462., 403., 385., 340., 329., 315., 200.,
                              96.5, 61.0, 41.8, 34.2 }
