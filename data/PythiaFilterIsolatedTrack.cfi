@@ -1,0 +1,6 @@
+   module isotrack_filter = PythiaFilterIsolatedTrack{
+       untracked string moduleLabel = 'source'    
+       untracked double MaxPhotonEta= 2.3
+       untracked double PhotonSeedPt= 10.
+       untracked double isoCone=0.5
+  }
