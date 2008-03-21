@@ -1,0 +1,5 @@
+module bctoefilter = BCToEFilter {
+	PSet filterAlgoPSet = {
+		double eTThreshold=5
+	}
+}
