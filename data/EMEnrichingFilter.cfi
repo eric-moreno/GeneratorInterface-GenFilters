@@ -1,12 +1,13 @@
 module emenrichingfilter = EMEnrichingFilter {
 	PSet filterAlgoPSet = {
-		double seedThresholdBarrel=5
-		double clusterThresholdBarrel=20
-		double coneSizeBarrel=-1 
-		double seedThresholdEndcap=5
-		double clusterThresholdEndcap=15
-		double coneSizeEndcap=30
-		double isoGenParETMin=15
+		double isoGenParETMin=20
 		double isoGenParConeSize=0.1
+		double clusterThreshold=20
+		double isoConeSize=0.2
+		double hOverEMax=0.5
+		double tkIsoMax=5
+		double caloIsoMax=10
+		bool requireTrackMatch=false
+		
 	}
 }
