@@ -1,0 +1,8 @@
+module highetphotonsfilter = HighETPhotonsFilter {
+	PSet filterAlgoPSet = {
+		double sumETThreshold=90
+		double seedETThreshold=40
+		double nonPhotETMax=10
+		double isoConeSize=0.1
+	}
+}
