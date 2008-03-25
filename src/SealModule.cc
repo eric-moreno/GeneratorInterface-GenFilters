@@ -21,7 +21,7 @@
 #include "GeneratorInterface/GenFilters/interface/CosmicGenFilterHelix.h"
 #include "GeneratorInterface/GenFilters/interface/CosmicGenFilterLowE.h"
 #include "GeneratorInterface/GenFilters/interface/BHFilter.h"
-
+#include "GeneratorInterface/GenFilters/interface/MCDecayingPionKaonFilter.h"
 
 DEFINE_SEAL_MODULE();
   DEFINE_ANOTHER_FWK_MODULE(PythiaFilter);
@@ -45,5 +45,5 @@ DEFINE_SEAL_MODULE();
   DEFINE_ANOTHER_FWK_MODULE(CosmicGenFilterHelix);
   DEFINE_ANOTHER_FWK_MODULE(CosmicGenFilterLowE);
   DEFINE_ANOTHER_FWK_MODULE(BHFilter);
-
-
+  DEFINE_ANOTHER_FWK_MODULE(MCDecayingPionKaonFilter);
+  DEFINE_ANOTHER_FWK_MODULE(MCDecayingPionKaonFilter);
