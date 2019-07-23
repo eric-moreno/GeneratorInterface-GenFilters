@@ -68,45 +68,44 @@ bool PythiaFilter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup)
 	     des != (*p)->end_vertex()->particles_end(HepMC::children);
 	     ++des ) {
 	 ++ndau;  
-       }     
-       for( unsigned int i=0; i<dauIDs.size(); ++i) {
-	   if( (*des)->pdg_id() != dauIDs[i] ) continue ;
-           if ( abs((*p)->pdg_id()) == particleID 
-	        && (*p)->momentum().rho() > minpcut 
-	        && (*p)->momentum().rho() < maxpcut
-	        && (*p)->momentum().perp() > minptcut 
-	        && (*p)->momentum().perp() < maxptcut
-	        && (*p)->momentum().eta() > minetacut
-	        && (*p)->momentum().eta() < maxetacut 
-	        && rapidity > minrapcut
-	        && rapidity < maxrapcut 
-	        && (*p)->momentum().phi() > minphicut
-	        && (*p)->momentum().phi() < maxphicut ) {
+            
+          for( unsigned int i=0; i<dauIDs.size(); ++i) {
+	          if( (*des)->pdg_id() != dauIDs[i] ) continue ;
+              if ( abs((*p)->pdg_id()) == particleID 
+	           && (*p)->momentum().rho() > minpcut 
+	           && (*p)->momentum().rho() < maxpcut
+	           && (*p)->momentum().perp() > minptcut 
+	           && (*p)->momentum().perp() < maxptcut
+	           && (*p)->momentum().eta() > minetacut
+	           && (*p)->momentum().eta() < maxetacut 
+	           && rapidity > minrapcut
+	           && rapidity < maxrapcut 
+	           && (*p)->momentum().phi() > minphicut
+	           && (*p)->momentum().phi() < maxphicut ) {
 	 
          
 	 
-	    if (status == 0 && motherID == 0){
-	       accepted = true;
-	    }
-	    if (status != 0 && motherID == 0){
-	       if ((*p)->status() == status)   
-	         accepted = true;
-	    }  
+	       if (status == 0 && motherID == 0){
+	          accepted = true;
+	       }
+	       if (status != 0 && motherID == 0){
+	          if ((*p)->status() == status)   
+	            accepted = true;
+	       }  
 	 
-	    HepMC::GenParticle* mother = (*((*p)->production_vertex()->particles_in_const_begin()));
+	       HepMC::GenParticle* mother = (*((*p)->production_vertex()->particles_in_const_begin()));
 	 
-	    if (status == 0 && motherID != 0){    
-	      if (abs(mother->pdg_id()) == abs(motherID)) {
-	        accepted = true;
-	      }
-	    }
-	   if (status != 0 && motherID != 0){
-	   
-	      if ((*p)->status() == status && abs(mother->pdg_id()) == abs(motherID)){   
-	        accepted = true;
+	       if (status == 0 && motherID != 0){    
+	         if (abs(mother->pdg_id()) == abs(motherID)) {
+	           accepted = true;
+	         }
+	       }
+	       if (status != 0 && motherID != 0){
+	         if ((*p)->status() == status && abs(mother->pdg_id()) == abs(motherID)){   
+	           accepted = true;
 	     
-	      }
-	   }
+	         }
+	       }
 	 
 	 /*
 	   if (status == 0 && motherID != 0){    
@@ -123,8 +122,8 @@ bool PythiaFilter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup)
 	   }
 	 */
 	 
-           }
-        }
+          }
+       }
      }
      
    } else { accepted = true; }
