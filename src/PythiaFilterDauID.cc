@@ -68,7 +68,7 @@ bool PythiaFilter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup)
 	     des != (*p)->end_vertex()->particles_end(HepMC::children);
 	     ++des ) {
 	 ++ndau;  
-	     
+       }     
        for( unsigned int i=0; i<dauIDs.size(); ++i) {
 	   if( (*des)->pdg_id() != dauIDs[i] ) continue ;
            if ( abs((*p)->pdg_id()) == particleID 
